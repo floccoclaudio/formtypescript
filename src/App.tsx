@@ -1,26 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import BirdList from "./components/BirdList";
+import NewBird from "./components/NewBird";
+import { Bird } from "./bird-model";
 
-function App() {
+const App: React.FC = () => {
+  const birds: Bird[] = [
+    // { name: "Pooper", age: 3, id: "pooperId" },
+    // { name: "Colla", age: 2, id: "collaId" },
+  ];
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <BirdList birds={birds} />
+      <NewBird />
     </div>
   );
-}
+};
 
 export default App;
